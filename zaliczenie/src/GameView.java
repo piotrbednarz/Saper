@@ -20,7 +20,7 @@ public class GameView extends JDialog implements ActionListener {
         game.setMinesOnField(countMinesToDeploy(wys, szer, miny)); //ustawia miny na planszy
         game.updateMinesAroundCount(); //po wylosowaniu min, każdemu polu pokazuje ile jest min dookola niej
 
-        mainPanel.setLayout(new GridLayout(wys, szer)); //zrobienie layoutu
+        mainPanel.setLayout(new GridLayout(wys, szer)); 
 
         for (int i = 0; i < wys; i++) {
             for (int o = 0; o < szer; o++) {
@@ -29,7 +29,7 @@ public class GameView extends JDialog implements ActionListener {
         }
 
         setContentPane(mainPanel);
-        setModal(true);//samo sie dodaje przy dialogu
+        setModal(true);
 
 
         // call onCancel() when cross is clicked
@@ -61,7 +61,7 @@ public class GameView extends JDialog implements ActionListener {
 
     private void onCancel() {
         // add your code here if necessary
-        dispose();//pozbadz sie obiektu
+        dispose();
     }
 
     private void createUIComponents() {
