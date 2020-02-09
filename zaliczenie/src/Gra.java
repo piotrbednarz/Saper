@@ -1,7 +1,6 @@
 import java.awt.*;
 import java.util.Random;
 
-//MA OBIEKT KTORY PRZETRZYMUJE POLA
 public class Gra {
     private Pole[][] plansza;
     private Dimension wymiary;
@@ -24,7 +23,7 @@ public class Gra {
 
     }
 
-    public void updateMinesAroundCount() {//obliczanie ile min jest dookola, jest w try catchach poniewaz dla niektorych pol te indeksy moga wykraczac poza tablicy
+    public void updateMinesAroundCount() {
         for (int a = 0; a < plansza.length; a++) {
             for (int b = 0; b < plansza[a].length; b++) {
                 int count = 0;
@@ -33,7 +32,7 @@ public class Gra {
                     if (plansza[a - 1][b - 1].checkMine()) {
                         count++;
                     }
-                } catch (ArrayIndexOutOfBoundsException exception) {//musi byc catch na to co moze byc bledem czyli ten arrayin...
+                } catch (ArrayIndexOutOfBoundsException exception) {
                 }
                 try {
                     if (plansza[a - 1][b].checkMine()) {
@@ -83,7 +82,7 @@ public class Gra {
                 }
 
 
-                plansza[a][b].setMinesAround(count);//odwolanie do typu pole, update na ile jest min dookola
+                plansza[a][b].setMinesAround(count);
             }
         }
     }
@@ -102,7 +101,7 @@ public class Gra {
                 y -= 1;
             }
 
-            if (!plansza[x][y].checkMine()) {//jesli nie ma miny to dodaj, bedzie przelatywac przez tablice i sprawdzac czy juz sa na niej miny az bedzie tyle ile stopien trudnosci
+            if (!plansza[x][y].checkMine()) {
                 plansza[x][y].setMine();
                 iteration++;
             }
