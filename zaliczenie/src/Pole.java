@@ -54,7 +54,7 @@ public class Pole {
         this.minesAround = minesAround;//to przechowuje ile jest min dookola dopiero po wylosowaniu lin
     }
 
-    public int getMinesAround() {//publiczna metoda ktora zwraca ilosc min dookola
+    public int getMinesAround() {
         return minesAround;
     }
 }
